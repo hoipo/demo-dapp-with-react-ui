@@ -61,6 +61,15 @@ function App() {
                 platforms: ["ios", "android", "macos", "windows", "linux"]
               },
               {
+                appName: "bybitMiniWallet",
+                name: "Bybit Mini Wallet",
+                imageUrl: "https://raw.githubusercontent.com/bybit-web3/bybit-web3.github.io/main/docs/images/bybit-logo.png",
+                aboutUrl: "https://www.bybit.com/web3",
+                universalLink: "https://t.me/unamed001_bot/wallet_dev?attach=wallet",
+                bridgeUrl: "https://api-node.bybit.com/spot/api/web3/bridge/ton/bridge",
+                platforms: ["ios", "android", "macos", "windows", "linux"]
+              },
+              {
                 appName: "cdcTonWallet",
                 name: "Crypto.com DeFi Wallet",
                 imageUrl: "https://apro-ncw-api-file.crypto.com/wallet/logo",
