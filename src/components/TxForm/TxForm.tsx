@@ -13,11 +13,11 @@ const defaultTx: SendTransactionRequest = {
 
     {
       // The receiver's address.
-      address: 'EQCKWpx7cNMpvmcN5ObM5lLUZHZRFKqYA4xmw9jOry0ZsF9M',
+      address: 'UQDa_tfg-2dh64ASRVie6tZAjIbvxHgOzZV27kYBoaH4eHsn',
       // Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
-      amount: '5000000',
+      amount: '666',
       // (optional) State initialization in boc base64 format.
-      stateInit: 'te6cckEBBAEAOgACATQCAQAAART/APSkE/S88sgLAwBI0wHQ0wMBcbCRW+D6QDBwgBDIywVYzxYh+gLLagHPFsmAQPsAlxCarA==',
+      stateInit: '',
       // (optional) Payload in boc base64 format.
       payload: 'te6ccsEBAQEADAAMABQAAAAASGVsbG8hCaTc/g==',
     },
