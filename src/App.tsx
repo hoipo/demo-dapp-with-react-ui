@@ -7,12 +7,39 @@ import {TonProofDemo} from "./components/TonProofDemo/TonProofDemo";
 import {CreateJettonDemo} from "./components/CreateJettonDemo/CreateJettonDemo";
 
 function App() {
+  // 获取url中的env参数
+  const search = new URLSearchParams(window.location.search)
+  const env = search.get('env')
+  const walletInfo: any = {
+    appName: "bybitMiniWallet",
+    name: "Bybit Mini Wallet",
+    imageUrl: "https://raw.githubusercontent.com/bybit-web3/bybit-web3.github.io/main/docs/images/bybit-logo.png",
+    aboutUrl: "https://www.bybit.com/web3",
+    universalLink: "https://t.me/unamed001_bot/wallet_dev?attach=wallet",
+    bridgeUrl: "https://api-node.bybit.com/spot/api/web3/bridge/ton/bridge",
+    platforms: ["ios", "android", "macos", "windows", "linux"]
+  };
+  console.log('env', env);
+  switch (env) {
+    case 'test':
+      walletInfo.universalLink = 'https://t.me/unamed001_bot/wallet_test?attach=wallet'
+      break;
+    case 'dev':
+      walletInfo.universalLink = 'https://t.me/unamed001_bot/wallet_dev?attach=wallet'
+      break;
+    default:
+      break;
+  }
+
+  console.log('walletInfo', walletInfo);
+    
   return (
       <TonConnectUIProvider
           manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
           uiPreferences={{ theme: THEME.DARK }}
           walletsListConfiguration={{
             includeWallets: [
+              {...walletInfo},
               {
                 appName: "telegram-wallet",
                 name: "Wallet",
@@ -58,15 +85,6 @@ function App() {
                 aboutUrl: "https://delabwallet.com",
                 universalLink: "https://t.me/dewallet?attach=wallet",
                 bridgeUrl: "https://bridge.dewallet.pro/bridge",
-                platforms: ["ios", "android", "macos", "windows", "linux"]
-              },
-              {
-                appName: "bybitMiniWallet",
-                name: "Bybit Mini Wallet",
-                imageUrl: "https://raw.githubusercontent.com/bybit-web3/bybit-web3.github.io/main/docs/images/bybit-logo.png",
-                aboutUrl: "https://www.bybit.com/web3",
-                universalLink: "https://t.me/unamed001_bot/wallet_dev?attach=wallet",
-                bridgeUrl: "https://api-node.bybit.com/spot/api/web3/bridge/ton/bridge",
                 platforms: ["ios", "android", "macos", "windows", "linux"]
               },
               {
