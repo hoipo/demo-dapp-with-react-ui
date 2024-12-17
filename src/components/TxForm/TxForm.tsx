@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import ReactJson, {InteractionProps} from 'react-json-view';
 import './style.scss';
 import {SendTransactionRequest, useTonConnectUI, useTonWallet} from "@tonconnect/ui-react";
@@ -46,14 +46,21 @@ export function TxForm() {
     setTx(value.updated_src as SendTransactionRequest)
   }, []);
 
-  setInterval(() => {
-    const validUntil = Math.floor(Date.now() / 1000) + 600;
-    setTx((state) => ({
-      ...state,
-      validUntil,
-    }));
-    console.info('validUntil updated -> ', validUntil)
-  }, 60 * 1000);
+  let timer: any;
+
+  useEffect(() => {
+    timer = setInterval(() => {
+      const validUntil = Math.floor(Date.now() / 1000) + 600;
+      setTx((state) => ({
+        ...state,
+        validUntil,
+      }));
+      console.info('validUntil updated -> ', validUntil)
+    }, 60 * 1000);
+    return () => {
+      clearInterval(timer);
+    }
+  }, [])
 
   return (
     <div className="send-tx-form">
