@@ -9,7 +9,7 @@ import {CreateJettonDemo} from "./components/CreateJettonDemo/CreateJettonDemo";
 function App() {
   // 获取url中的env参数
   const search = new URLSearchParams(window.location.search)
-  const env = search.get('env')
+  const universalLink = search.get('universalLink')
   const walletInfo: any = {
     appName: "bybitMiniWallet",
     name: "Bybit Mini Wallet",
@@ -19,16 +19,8 @@ function App() {
     bridgeUrl: "https://api-node.bybit.com/spot/api/web3/bridge/ton/bridge",
     platforms: ["ios", "android", "macos", "windows", "linux"]
   };
-  console.log('env', env);
-  switch (env) {
-    case 'test':
-      walletInfo.universalLink = 'https://t.me/unamed001_bot/wallet_test?attach=wallet'
-      break;
-    case 'dev':
-      walletInfo.universalLink = 'https://t.me/unamed001_bot/wallet_dev?attach=wallet'
-      break;
-    default:
-      break;
+  if (universalLink) {
+    walletInfo.universalLink = universalLink
   }
 
   console.log('walletInfo', walletInfo);
