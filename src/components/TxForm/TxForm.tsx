@@ -47,10 +47,12 @@ export function TxForm() {
   }, []);
 
   setInterval(() => {
+    const validUntil = Math.floor(Date.now() / 1000) + 600;
     setTx((state) => ({
       ...state,
-      validUntil: Math.floor(Date.now() / 1000) + 600,
-    }))
+      validUntil,
+    }));
+    console.info('validUntil updated -> ', validUntil)
   }, 60 * 1000);
 
   return (
