@@ -19,7 +19,11 @@ function App() {
     bridgeUrl: "https://api-node.bybit.com/spot/api/web3/bridge/ton/bridge",
     platforms: ["ios", "android", "macos", "windows", "linux"]
   };
-  if (universalLink) {
+
+  console.log('universalLink', universalLink);
+  if (
+    universalLink
+    ) {
     walletInfo.universalLink = universalLink
   }
 
