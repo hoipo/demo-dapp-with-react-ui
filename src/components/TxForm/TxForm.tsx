@@ -46,6 +46,13 @@ export function TxForm() {
     setTx(value.updated_src as SendTransactionRequest)
   }, []);
 
+  setInterval(() => {
+    setTx((state) => ({
+      ...state,
+      validUntil: Math.floor(Date.now() / 1000) + 600,
+    }))
+  }, 60 * 1000);
+
   return (
     <div className="send-tx-form">
       <h3>Configure and send transaction</h3>
