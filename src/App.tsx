@@ -8,24 +8,24 @@ import {CreateJettonDemo} from "./components/CreateJettonDemo/CreateJettonDemo";
 
 function App() {
   // 获取url中的env参数
-  // const search = new URLSearchParams(window.location.search)
-  // const universalLink = search.get('universalLink')
-  // const walletInfo: any = {
-  //   appName: "bybitMiniWallet",
-  //   name: "Bybit Mini Wallet",
-  //   imageUrl: "https://raw.githubusercontent.com/bybit-web3/bybit-web3.github.io/main/docs/images/bybit-logo.png",
-  //   aboutUrl: "https://www.bybit.com/web3",
-  //   universalLink: "https://t.me/unamed001_bot/wallet_dev?attach=wallet",
-  //   bridgeUrl: "https://api-node.bybit.com/spot/api/web3/bridge/ton/bridge",
-  //   platforms: ["ios", "android", "macos", "windows", "linux"]
-  // };
+  const search = new URLSearchParams(window.location.search)
+  const universalLink = search.get('universalLink')
+  const walletInfo: any = {
+    appName: "bybitMiniWallet",
+    name: "Bybit Mini Wallet",
+    imageUrl: "https://raw.githubusercontent.com/bybit-web3/bybit-web3.github.io/main/docs/images/bybit-logo.png",
+    aboutUrl: "https://www.bybit.com/web3",
+    universalLink: "https://t.me/unamed001_bot/wallet_dev?attach=wallet",
+    bridgeUrl: "https://api-node.bybit.com/spot/api/web3/bridge/ton/bridge",
+    platforms: ["ios", "android", "macos", "windows", "linux"]
+  };
 
-  // console.log('universalLink', universalLink);
-  // if ( universalLink ) {
-  //   walletInfo.universalLink = universalLink
-  // }
+  console.log('universalLink', universalLink);
+  if ( universalLink ) {
+    walletInfo.universalLink = universalLink
+  }
 
-  // console.log('walletInfo', walletInfo);
+  console.log('walletInfo', walletInfo);
     
   return (
       <TonConnectUIProvider
@@ -33,7 +33,7 @@ function App() {
           uiPreferences={{ theme: THEME.DARK }}
           walletsListConfiguration={{
             includeWallets: [
-              // {...walletInfo},
+              {...walletInfo},
               {
                 appName: "telegram-wallet",
                 name: "Wallet",
