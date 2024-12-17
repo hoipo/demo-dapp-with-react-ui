@@ -66,7 +66,7 @@ export function TxForm() {
     <div className="send-tx-form">
       <h3>Configure and send transaction</h3>
 
-      <ReactJson theme="ocean" src={defaultTx} onEdit={onChange} onAdd={onChange} onDelete={onChange}/>
+      <ReactJson theme="ocean" src={tx} onEdit={onChange} onAdd={onChange} onDelete={onChange}/>
 
       {wallet ? (
         <button onClick={() => tonConnectUi.sendTransaction(tx)}>
