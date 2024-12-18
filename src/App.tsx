@@ -17,7 +17,7 @@ function App() {
     aboutUrl: "https://www.bybit.com/web3",
     universalLink: "https://t.me/unamed001_bot/wallet_dev?attach=wallet",
     // bridgeUrl: "https://api-node.bybit.com/spot/api/web3/bridge/ton/bridge",
-    bridgeUrl: "https://bridge.tonapi.io/bridge",
+    bridgeUrl: "https://www.okx.com/tonbridge/discover/rpc/bridge",
     platforms: ["ios", "android", "macos", "windows", "linux"]
   };
 
