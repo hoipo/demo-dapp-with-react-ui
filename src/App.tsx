@@ -10,6 +10,7 @@ function App() {
   // 获取url中的env参数
   const search = new URLSearchParams(window.location.search)
   const universalLink = search.get('universalLink')
+  const enableTonProof = search.get('enableTonProof')
   const walletInfo: any = {
     appName: "bybitMiniWallet",
     name: "Bybit Mini Wallet",
@@ -182,10 +183,10 @@ function App() {
           }}
       >
         <div className="app">
-            <Header />
+            <Header initValueTonProof={!!enableTonProof} />
             <TxForm />
             <CreateJettonDemo />
-            <TonProofDemo />
+            {!!enableTonProof && <TonProofDemo /> }
             <Footer />
         </div>
       </TonConnectUIProvider>
