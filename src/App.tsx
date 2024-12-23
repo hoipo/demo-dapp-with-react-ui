@@ -43,7 +43,7 @@ function App() {
                 aboutUrl: "https://www.bybit.com/web3/",
                 universalLink: "https://app.bybit.com/ton-connect/",
                 deepLink: "bybitapp://",
-                bridgeUrl: "https://api2-testnet.bybit.com/spot/api/web3/bridge/ton/bridge",
+                bridgeUrl: "https://api-testnet.bybit.com/spot/api/web3/bridge/ton/bridge",
                 platforms: ["ios", "android"]
               }
             ]
