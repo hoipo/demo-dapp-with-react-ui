@@ -48,19 +48,19 @@ export function TxForm() {
 
   let timer: any;
 
-  useEffect(() => {
-    timer = setInterval(() => {
-      const validUntil = Math.floor(Date.now() / 1000) + 600;
-      setTx((state) => ({
-        ...state,
-        validUntil,
-      }));
-      console.info('validUntil updated -> ', validUntil)
-    }, 60 * 1000);
-    return () => {
-      clearInterval(timer);
-    }
-  }, [])
+  // useEffect(() => {
+  //   timer = setInterval(() => {
+  //     const validUntil = Math.floor(Date.now() / 1000) + 600;
+  //     setTx((state) => ({
+  //       ...state,
+  //       validUntil,
+  //     }));
+  //     console.info('validUntil updated -> ', validUntil)
+  //   }, 60 * 1000);
+  //   return () => {
+  //     clearInterval(timer);
+  //   }
+  // }, [])
 
   return (
     <div className="send-tx-form">
